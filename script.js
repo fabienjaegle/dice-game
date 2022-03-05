@@ -14,13 +14,15 @@ function init() {
     roundScore = 0;
     isPlaying = true;
 
-    document.getElementById('dice').style.display = 'none';
+    document.getElementById('dice-xs').style.display = 'none';
+    document.getElementById('dice-sm').style.display = 'none';
     document.getElementById('score-1').textContent = '0';
     document.getElementById('score-2').textContent = '0';
     document.getElementById('current-1').textContent = '0';
     document.getElementById('current-2').textContent = '0';
 
-    document.getElementById('goal').textContent = GOAL_SCORE;
+    document.getElementById('goal-xs').textContent = GOAL_SCORE;
+    document.getElementById('goal-sm').textContent = GOAL_SCORE;
 
     document.getElementById('name-1').textContent = PLAYER_1;
     document.getElementById('name-2').textContent = PLAYER_2;
@@ -36,17 +38,21 @@ function init() {
 
     document.getElementById('game-buttons').style.display = 'block';
 
-    document.getElementById('lost-round').style.display = 'none';
+    document.getElementById('lost-round-xs').style.display = 'none';
+    document.getElementById('lost-round-sm').style.display = 'none';
 }
 
 function rollDice() {
     if (isPlaying) {
         var dice = Math.floor(Math.random() * 6) + 1;
 
-        document.getElementById('lost-round').style.display = 'none';
+        document.getElementById('lost-round-xs').style.display = 'none';
+        document.getElementById('lost-round-sm').style.display = 'none';
 
-        document.getElementById('dice').style.display = 'inline-block';
-        document.getElementById('dice').src = 'img/dice-' + dice + '.png';
+        document.getElementById('dice-xs').style.display = 'inline-block';
+        document.getElementById('dice-xs').src = 'img/dice-' + dice + '.png';
+        document.getElementById('dice-sm').style.display = 'inline-block';
+        document.getElementById('dice-sm').src = 'img/dice-' + dice + '.png';
 
         if (dice !== 1) {
             //add score
@@ -54,7 +60,8 @@ function rollDice() {
             document.querySelector('#current-' + currentPlayer).textContent = roundScore;
         } else {
             document.getElementById('current-player').textContent = players[currentPlayerIndex];
-            document.getElementById('lost-round').style.display = 'block';
+            document.getElementById('lost-round-xs').style.display = 'block';
+            document.getElementById('lost-round-sm').style.display = 'block';
             
             nextPlayer();
         }
@@ -75,7 +82,8 @@ function nextPlayer() {
     document.querySelector('.dot-1').classList.toggle('active');
     document.querySelector('.dot-2').classList.toggle('active');
 
-    document.getElementById('dice').style.display = 'none';
+    document.getElementById('dice-xs').style.display = 'none';
+    document.getElementById('dice-sm').style.display = 'none';
 }
 
 function hold() {
@@ -89,7 +97,8 @@ function hold() {
         // check if player win the game
         if (scores[currentPlayerIndex] >= GOAL_SCORE) {
             document.getElementById('winner-' + currentPlayer).style.display = 'block';
-            document.getElementById('dice').style.display = 'none';
+            document.getElementById('dice-xs').style.display = 'none';
+            document.getElementById('dice-sm').style.display = 'none';
             document.querySelector('.player-' + currentPlayer + '-panel').classList.remove('bg-light');
             document.getElementById('game-buttons').style.display = 'none';
             isPlaying = false;
