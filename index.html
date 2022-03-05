@@ -16,42 +16,56 @@
             <div class="col-4 m-5">
                 <div class="bg-light p-5 rounded">
                     <h1>Player 1</h1>
-                    <p class="lead">This example is a quick.</p>
-                    <p class="lead">This example is a quick.</p>
+                    <div class="row">
+                        <div class="col"><p>Current score</p></div>
+                        <div class="col"><p class="text-end">0 point</p></div>
+                    </div>
+                    <div class="row">
+                        <div class="col">Total score</div>
+                        <div class="col"><p class="text-end">0 point</p></div>
+                    </div>
                 </div>
                 <div class="p-5 rounded">
                     <h1>Player 2</h1>
-                    <p class="lead">This example is a quick.</p>
-                    <p class="lead">This example is a quick.</p>
+                    <div class="row">
+                        <div class="col"><p>Current score</p></div>
+                        <div class="col"><p class="text-end">0 point</p></div>
+                    </div>
+                    <div class="row">
+                        <div class="col">Total score</div>
+                        <div class="col"><p class="text-end">0 point</p></div>
+                    </div>
                 </div>
             </div>
             <div class="col-5">
                 <div class="pt-5">
                     <div class="row">
                         <div class="col"><h1>Your roll</h1></div>
-                        <div class="col p-4 text-center bg-light"><img src="img/dice-5.png" alt="Dice" class="dice" id="dice-1"/></div>
+                        <div class="col p-4 text-center bg-light"><img src="img/dice-6.png" alt="Dice" class="dice" id="dice-1"/></div>
                     </div>
                 </div>
                 <div class="pt-4">
                     <div class="row">
                         <div class="bg-light text-center p-2">
-                            <button class="btn btn-primary m-2" type="submit">Button</button>
-                            <button class="btn btn-primary m-2" type="submit">Button</button>
+                            <button class="btn btn-danger m-2" type="submit">Button</button>
+                            <button type="button" class="btn btn-outline-danger">Hold</button>
                         </div>
                     </div>
                 </div>
                 <div class="pt-4">
                     <div class="row">
                         <div class="bg-light text-center p-2">
-                            <p class="lead">Oof, you lost all your score <span>Player1</span>!</p>
+                            <p class="lead">Oof, you lost all your score <span class="red">Player1</span>!</p>
                         </div>
                     </div>
                 </div>
                 <div class="pt-4">
                     <div class="row">
-                        <div class="bg-light text-center p-2">
-                            <p class="lead">Oof, you lost all your score <span>Player1</span>!</p>
+                        <div class="col">
+                            <div class="row"><p>Score goal</p></div>
+                            <div class="row"><p>100</p></div>
                         </div>
+                        <div class="col p-4 text-center"><button type="button" class="btn btn-primary">New game</button></div>
                     </div>
                 </div>
             </div>
