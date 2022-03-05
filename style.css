@@ -4,6 +4,10 @@ body {
     padding-top: 1.85rem;
 }
 
+p {
+    font-size: medium;
+}
+
 .dice {
     width: 100px;
     height: 100px;
@@ -11,4 +15,12 @@ body {
 
 .red {
     color: #dc4444;
+}
+
+.player-inner {
+    padding: 1rem 3rem;
+}
+
+.bold {
+    font-weight: bold;
 }
