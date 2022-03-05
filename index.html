@@ -2,55 +2,124 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="A simple dice game who can be played by two players. Have fun!">
     <title>Dice Game</title>
-    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,600" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,600,700" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link type="text/css" rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <main class="container">
+    <nav class="navbar navbar-light bg-light d-sm-none">
         <div class="row">
-            <div class="col-4 m-5">
-                <div class="bg-light p-5 rounded">
-                    <h1>Player 1</h1>
-                    <p class="lead">This example is a quick.</p>
-                    <p class="lead">This example is a quick.</p>
-                </div>
-                <div class="p-5 rounded">
-                    <h1>Player 2</h1>
-                    <p class="lead">This example is a quick.</p>
-                    <p class="lead">This example is a quick.</p>
+            <div class="col m-3">
+                <div class="row">
+                    <p class="bold">Score goal</p>
+                    <p><span id="goal-xs">xxx</span> points</p>
                 </div>
             </div>
-            <div class="col-5">
-                <div class="pt-5">
-                    <div class="row">
-                        <div class="col"><h1>Your roll</h1></div>
-                        <div class="col p-4 text-center bg-light"><img src="img/dice-5.png" alt="Dice" class="dice" id="dice-1"/></div>
+            <div class="col m-4 text-end">
+                <button type="button" class="btn btn-primary" onclick="newGame()">New game</button>
+            </div>
+        </div>
+    </nav>
+    <main class="container">
+        <h1 class="text-center d-none d-sm-block">Dice Game</h1>
+        <div class="row">
+            <div class="col-md-4 col-xs-12 m-5 mx-auto">
+                <div class="player-1-panel bg-light rounded">
+                    <div class="player-inner">
+                        <div class="row">
+                            <div class="col"><h2 id="name-1" class="pb-3 bold">Player X</h2></div>
+                            <div class="col mt-3 text-end"><span class="dot dot-1 active"></span></div>
+                        </div>
+                        <div id="winner-1" class="row">
+                            <div class="col bold red"><p>WINNER!</p></div>
+                        </div>
+                        <div class="row">
+                            <div class="col"><p class="bold">Current score</p></div>
+                            <div class="col"><p class="text-end"><span id="current-1">0</span> points</p></div>
+                        </div>
+                        <div class="row">
+                            <div class="col"><p class="bold">Total score</p></div>
+                            <div class="col"><p class="text-end"><span id="score-1">0</span> points</p></div>
+                        </div>
                     </div>
                 </div>
-                <div class="pt-4">
+                <div class="player-2-panel bg-light mt-5">
+                    <div class="player-inner">
+                        <div class="row">
+                            <div class="col"><h2 id="name-2" class="pb-3 bold">Player X</h2></div>
+                            <div class="col mt-3 text-end"><span class="dot dot-2 active"></span></div>
+                        </div>
+                        <div id="winner-2" class="row">
+                            <div class="col bold red"><p>WINNER!</p></div>
+                        </div>
+                        <div class="row">
+                            <div class="col"><p class="bold">Current score</p></div>
+                            <div class="col"><p class="text-end"><span id="current-2">0</span> points</p></div>
+                        </div>
+                        <div class="row">
+                            <div class="col"><p class="bold">Total score</p></div>
+                            <div class="col"><p class="text-end"><span id="score-2">0</span> points</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="lost-round-xs" class="pt-4 d-sm-none">
+                <div class="row">
+                    <div class="col bg-light text-center p-2">
+                        <p class="mt-3">Woops! You lost all your round score <span id="current-player-xs" class="red">Player1</span>!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5 col-xs-12 m-sm-5 mx-auto">
+                <div class="d-sm-none">
                     <div class="row">
-                        <div class="bg-light text-center p-2">
-                            <button class="btn btn-primary m-2" type="submit">Button</button>
-                            <button class="btn btn-primary m-2" type="submit">Button</button>
+                        <div class="col text-center" style="width:150px; height:150px">
+                            <img id="dice-xs" class="dice" src="img/dice-6.png" alt="Dice" />
+                        </div>
+                        <div class="col-xs-12 text-center">
+                            <h3 class="bold">Your roll</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-none d-sm-block">
+                    <div class="row">
+                        <div class="col col-xs-12">
+                            <h3 class="bold">Your roll</h3>
+                        </div>
+                        <div class="col text-center" style="width:150px; height:150px">
+                            <img id="dice-sm" class="dice" src="img/dice-6.png" alt="Dice" />
                         </div>
                     </div>
                 </div>
                 <div class="pt-4">
                     <div class="row">
-                        <div class="bg-light text-center p-2">
-                            <p class="lead">Oof, you lost all your score <span>Player1</span>!</p>
+                        <div id="game-buttons" class="bg-light text-center p-2">
+                            <button type="button" class="btn btn-danger m-2" onclick="rollDice()">Roll dice</button>
+                            <button type="button" class="btn btn-outline-danger" onclick="hold()">Hold</button>
                         </div>
                     </div>
                 </div>
-                <div class="pt-4">
+                <div id="lost-round-sm" class="pt-4 d-xs-none">
                     <div class="row">
-                        <div class="bg-light text-center p-2">
-                            <p class="lead">Oof, you lost all your score <span>Player1</span>!</p>
+                        <div class="col bg-light text-center p-2">
+                            <p class="mt-3">Woops! You lost all your round score <span id="current-player-sm" class="red">Player1</span>!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pt-4 d-none d-sm-block">
+                    <div class="row">
+                        <div class="col">
+                            <div class="row">
+                                <p class="bold">Score goal</p>
+                                <p><span id="goal-sm">xxx</span> points</p>
+                            </div>
+                        </div>
+                        <div class="col mt-3 text-end">
+                            <button type="button" class="btn btn-primary" onclick="newGame()">New game</button>
                         </div>
                     </div>
                 </div>

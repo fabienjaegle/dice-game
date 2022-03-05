@@ -1,10 +1,43 @@
 body {
     font-family: 'Lato';
     font-size: 12px;
-    padding-top: 1.85rem;
+}
+
+p {
+    font-size: medium;
 }
 
 .dice {
     width: 100px;
     height: 100px;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.10);
+}
+
+.red {
+    color: #dc4444;
+}
+
+.player-inner {
+    padding: 1.4rem 3rem;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.btn {
+    border-radius: 1.25rem;
+    font-weight: 600;
+}
+
+.dot {
+    height: 12px;
+    width: 12px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.dot.active {
+    background-color: #4bf;
 }
