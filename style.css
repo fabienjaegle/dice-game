@@ -30,3 +30,15 @@ p {
     border-radius: 1.25rem;
     font-weight: 600;
 }
+
+.dot {
+    height: 12px;
+    width: 12px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.dot.active {
+    background-color: #4bf;
+}
