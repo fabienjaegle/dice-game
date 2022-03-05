@@ -11,6 +11,7 @@ p {
 .dice {
     width: 100px;
     height: 100px;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.10);
 }
 
 .red {
@@ -18,9 +19,14 @@ p {
 }
 
 .player-inner {
-    padding: 1rem 3rem;
+    padding: 1.4rem 3rem;
 }
 
 .bold {
     font-weight: bold;
+}
+
+.btn {
+    border-radius: 1.25rem;
+    font-weight: 600;
 }
