@@ -15,6 +15,10 @@ function init() {
     isPlaying = true;
 
     document.getElementById('dice').style.display = 'none';
+    document.getElementById('score-1').textContent = '0';
+    document.getElementById('score-2').textContent = '0';
+    document.getElementById('current-1').textContent = '0';
+    document.getElementById('current-2').textContent = '0';
 
     document.getElementById('goal').textContent = GOAL_SCORE;
 
@@ -29,6 +33,8 @@ function init() {
     document.querySelector('.dot-1').classList.remove('active');
     document.querySelector('.dot-2').classList.remove('active');
     document.querySelector('.dot-1').classList.add('active');
+
+    document.getElementById('game-buttons').style.display = 'block';
 
     document.getElementById('lost-round').style.display = 'none';
 }
@@ -47,8 +53,6 @@ function rollDice() {
             roundScore += dice;
             document.querySelector('#current-' + currentPlayer).textContent = roundScore;
         } else {
-            console.log('lost!');
-            console.log(players[currentPlayerIndex]);
             document.getElementById('current-player').textContent = players[currentPlayerIndex];
             document.getElementById('lost-round').style.display = 'block';
             
@@ -93,4 +97,8 @@ function hold() {
             nextPlayer();
         }
     }
+}
+
+function newGame() {
+    init();
 }
