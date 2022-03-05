@@ -59,7 +59,8 @@ function rollDice() {
             roundScore += dice;
             document.querySelector('#current-' + currentPlayer).textContent = roundScore;
         } else {
-            document.getElementById('current-player').textContent = players[currentPlayerIndex];
+            document.getElementById('current-player-xs').textContent = players[currentPlayerIndex];
+            document.getElementById('current-player-sm').textContent = players[currentPlayerIndex];
             document.getElementById('lost-round-xs').style.display = 'block';
             document.getElementById('lost-round-sm').style.display = 'block';
             
