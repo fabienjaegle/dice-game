@@ -1,0 +1,10 @@
+body {
+    font-family: 'Lato';
+    font-size: 12px;
+    padding-top: 1.85rem;
+}
+
+.dice {
+    width: 100px;
+    height: 100px;
+}
